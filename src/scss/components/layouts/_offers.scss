@@ -1,0 +1,323 @@
+@use "../../abstracts" as *;
+
+.offers {
+  position: relative;
+  display: grid;
+
+
+  &__container {
+    z-index: 3;
+  }
+
+  &__nav {
+    display: flex;
+    gap: 0.8rem;
+    margin-bottom: 2.6rem;
+  }
+
+  &__footer {
+    margin-top: 2.5rem;
+  }
+
+  &__title {
+    --text-align: right;
+    margin-bottom: 0;
+
+    @media (max-width: $breakpoint-md) {
+      --text-align: center;
+    }
+
+    @media (max-width: $breakpoint-sm) {
+      --text-align: center;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 7rem;
+    text-align: right;
+    font-family: $font-family-accent;
+    font-size: 2.5rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+
+    @media (max-width: $breakpoint-lg) {
+      margin-bottom: 4rem
+    }
+
+    @media (max-width: $breakpoint-md) {
+      font-size: 1.1rem;
+      text-align: center;
+      margin-bottom: 3rem
+    }
+
+    @media (max-width: $breakpoint-sm) {
+      --text-align: center;
+    }
+  }
+
+  &__back {
+    z-index: 1;
+    position: absolute;
+    top: 58rem;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    @media (max-width: $breakpoint-md) {
+      top: 36rem;
+    }
+
+    @media (max-width: $breakpoint-sm) {
+      top: 30rem;
+    }
+  }
+
+  &__noise {
+    pointer-events: none;
+    position: absolute;
+    z-index: 2;
+    opacity: 0.1;
+    width: 100%;
+    height: 100%;
+    max-width: initial;
+  }
+
+  &__list {
+    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: start;
+
+    @media (max-width: $breakpoint-lg) {
+      grid-template-columns: 1fr;
+    }
+
+    @media (max-width: $breakpoint-md) {
+      overflow-x: scroll;
+      grid-template-columns: repeat(auto-fit, 1fr);
+    }
+
+    @media (max-width: $breakpoint-sm) {
+      overflow-x: scroll;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+.offer {
+  padding: 3.125rem 3.4rem;
+  background: #ffffff;
+  border-radius: 30px;
+
+  @media (max-width: $breakpoint-md) {
+    min-width: min(70vw, 340px);
+    padding: 2.5rem 2.2rem;
+  }
+
+  &.active {
+    .offer__info {
+      grid-template-rows: 1fr;
+    }
+  }
+
+  &:nth-child(1) {
+    background-image: url(#{$path-assets}/offer-1.png);
+    background-position: top right;
+    background-repeat: no-repeat;
+  }
+
+  &:nth-child(2) {
+    background-image: url(#{$path-assets}/offer-2.png);
+    background-position: bottom right;
+    background-repeat: no-repeat;
+  }
+
+  &:nth-child(3) {
+    background-image: url(#{$path-assets}/offer-3.png);
+    background-position: top right;
+    background-repeat: no-repeat;
+  }
+
+  &__title {
+    font-size: 2.5rem;
+    font-family: $font-family-accent;
+    font-weight: $font-weight-bold;
+    margin-bottom: 1.25rem;
+
+    @media (max-width: $breakpoint-md) {
+      font-size: 2.25rem;
+    }
+  }
+
+  &__collapse {
+    display: inline-block;
+    margin-top: 10px;
+
+    color: #000;
+    font-size: 1.25rem;
+    text-transform: lowercase;
+    font-family: $font-family-base;
+    font-weight: $font-weight-bold;
+    line-height: 1.6rem;
+    letter-spacing: 1px;
+
+    @media (max-width: $breakpoint-md) {
+      font-size: 1rem;
+    }
+
+    &.active {
+      .open {
+        display: none;
+      }
+
+      .close {
+        display: inline-block;
+      }
+
+      svg {
+        transform-origin: center;
+        rotate: 180deg;
+        margin-bottom: -10px;
+      }
+    }
+
+    .open {
+      display: inline-block;
+    }
+
+    .close {
+      display: none;
+    }
+
+    svg {
+      margin-left: 10px;
+    }
+  }
+
+  &__info {
+    display: grid;
+    grid-template-rows: 0fr;
+    overflow: hidden;
+
+    transition: grid-template-rows .2s ease-in;
+
+    ul {
+      display: grid;
+      margin: 0;
+      padding-left: 1.75rem;
+
+      @media (max-width: $breakpoint-lg) {
+        padding-left: 1.5rem;
+      }
+    }
+
+    li {
+      font-family: $font-family-base;
+      font-size: 1.25rem;
+      line-height: 1.8em;
+      letter-spacing: 1px;
+      font-weight: 500;
+
+      @media (max-width: $breakpoint-md) {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  &__price {
+    margin-top: 2rem;
+    color: #000;
+    font-family: $font-family-accent;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.8em;
+    letter-spacing: 2px;
+
+    &:has(.offer__discount) {
+      margin-top: 1.1875rem;
+    }
+  }
+
+  &__discount {
+    text-align: right;
+    margin-bottom: -23px;
+
+    &-percent {
+      color: #000;
+      font-family: $font-family-accent;
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: 0.8px;
+    }
+
+    &-price {
+      padding-right: 10px;
+      color: #000;
+      font-family: $font-family-accent;
+      font-size: 1.25rem;
+      font-weight: $font-weight-bold;
+      line-height: 1;
+      letter-spacing: 1px;
+
+      span {
+        display: inline-block;
+        position: relative;
+
+        &::after {
+          content: "";
+          display: block;
+          position: absolute;
+          height: 3px;
+          width: calc(100% + 20px);
+          background-color: #000000;
+
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+  }
+}
+
+.tabs {
+  .tab {
+    display: none;
+
+    &__content {
+      min-height: 400px;
+    }
+
+    &.active {
+      display: block;
+    }
+  }
+}
+
+.develop {
+  border-radius: 30px;
+  margin-top: 10rem;
+  padding: 3.125rem 0;
+  background-color: #ffffff;
+
+  color: #000;
+  text-align: center;
+  font-family: $font-family-accent;
+  font-size: 6.25rem;
+  font-weight: 800;
+
+  @media (max-width: $breakpoint-lg) {
+    font-size: 4rem;
+    margin-top: 8rem;
+  }
+
+  @media (max-width: $breakpoint-md) {
+    font-size: 3rem;
+    margin-top: 6rem;
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    font-size: 2rem;
+    margin-top: 4rem;
+  }
+}

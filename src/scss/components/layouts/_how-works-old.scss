@@ -1,0 +1,149 @@
+@use "../../abstracts" as *;
+
+.how-works {
+  position: relative;
+
+  display: grid;
+
+  background: #000;
+  color: #ffffff;
+
+  &__container {
+    z-index: 2;
+    overflow: initial;
+  }
+
+  &__back {
+    z-index: 1;
+    position: absolute;
+    top: 58%;
+    left: 57%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__title {
+    font-size: 8.75rem;
+    margin-bottom: 2.6rem;
+    font-weight: 500;
+    color: inherit;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__images {
+    flex-basis: 36%;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 0.625rem;
+    transform: translateX(-210px);
+  }
+
+  &__image {
+    &:nth-child(2) {
+      transform: translateX(42px);
+    }
+
+    &:nth-child(3) {
+      transform: translateX(-15px);
+    }
+  }
+
+  &__list {
+    flex-basis: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+  }
+
+  &__item {
+    background: #ffffff;
+
+    border-radius: 30px;
+    padding: 2rem 2.55rem;
+
+    width: min(500px, 100%);
+
+    &:nth-child(1) {
+      background-image: url(#{$path-assets}/how-works-item-1.png);
+      background-position: top right;
+      background-repeat: no-repeat;
+    }
+
+    &:nth-child(2) {
+      background-image: url(#{$path-assets}/how-works-item-2.png);
+      background-position: top left;
+      background-repeat: no-repeat;
+    }
+
+    &:nth-child(3) {
+      background-image: url(#{$path-assets}/how-works-item-3.png);
+      background-position: bottom right;
+      background-repeat: no-repeat;
+    }
+
+    &-title {
+      color: #000;
+      font-size: 2.5rem;
+      margin-bottom: 18px;
+      font-family: $font-family-accent;
+      font-weight: $font-weight-bold;
+    }
+
+    &-text {
+      color: #000;
+      font-family: $font-family-base;
+      font-size: $font-size-200;
+      font-weight: $font-weight-semi-bold;
+      line-height: 160%;
+      letter-spacing: 0.7px;
+    }
+
+    &:nth-child(odd) {
+      align-self: end;
+    }
+  }
+}
+//
+//<section class="section how-works">
+//<div class="container how-works__container">
+//<h2 class="section__title how-works__title">Как это работает?</h2>
+//<div class="how-works__content">
+//<div class="how-works__images">
+//<div class="how-works__image">
+//<img src="public/assets/how-works-1.png" alt="Panel">
+//</div>
+//<div class="how-works__image">
+//<img src="public/assets/how-works-2.png" alt="Graphs 1">
+//</div>
+//<div class="how-works__image">
+//<img src="public/assets/how-works-3.png" alt="Graphs 2">
+//</div>
+//</div>
+//<div class="how-works__list">
+//<div class="how-works__item">
+//<div class="how-works__item-title">1. Делает то</div>
+//<p class="how-works__item-text">Нужно вместо "Эконом" "Профит" "Дорого". до 5, до 15, до
+//25.
+//  В описании включаем текст до 5 показателей и еще пункты.</p>
+//</div>
+//<div class="how-works__item">
+//<div class="how-works__item-title">2. Улучшаем</div>
+//<p class="how-works__item-text">Нужно вместо "Эконом" "Профит" "Дорого". до 5, до 15, до
+//25.
+//  В описании включаем текст до 5 показателей и еще пункты.</p>
+//</div>
+//<div class="how-works__item">
+//<div class="how-works__item-title">3. Показываем</div>
+//<p class="how-works__item-text">Нужно вместо "Эконом" "Профит" "Дорого". до 5, до 15, до
+//25.
+//  В описании включаем текст до 5 показателей и еще пункты.</p>
+//</div>
+//</div>
+//</div>
+//</div>
+//<img src="public/assets/how-works-image.png" class="how-works__back" alt="">
+//</section>

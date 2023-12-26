@@ -1,0 +1,698 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"/>
+    <link rel="stylesheet" href="./src/libs/slick/slick.min.css">
+    <link rel="stylesheet" href="./src/scss/main.scss">
+    <title>Bitkovin Analytics</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <script defer src="./src/libs/jquery/jquery-3.6.3.min.js"></script>
+    <script defer src="./src/libs/slick/slick.min.js"></script>
+    <script defer src="./src/libs/gsap/ScrollSmoother.min.js"></script>
+    <script defer src="./src/libs/gsap/ScrollTrigger.min.js"></script>
+    <script defer src="./src/libs/gsap/gsap.min.js"></script>
+</head>
+<body>
+<div class="site-container" id="smooth-wrapper">
+    <div id="smooth-content">
+        <header class="header">
+            <div class="container header__container">
+                <div class="header__inner">
+                    <div class="logo">
+                        <img id="header__logo" src="/assets/logo.svg" alt="BIT kovin">
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="main">
+            <section class="hero" id="hero">
+                <div class="container hero__container">
+                    <div class="hero__content">
+                        <h1 class="hero__title section__title">
+                            <span>Новый горизонт</span><span> в&nbsp;<span class="bold">аналитике</span></span>
+                            <span>Битрикс</span><span class="numbers">24</span>
+                        </h1>
+                        <div class="hero__footer">
+                            <a href="#" data-fancybox data-src="#modal-content" class="btn">Получить консультацию</a>
+                            <a href="#" class="btn" data-btn="border">Демонстрация продукта</a>
+                        </div>
+                    </div>
+                    <div class="hero__lights">
+                        <div class="l1"></div>
+                        <div class="l2"></div>
+                        <div class="l3"></div>
+                    </div>
+                    <img src="./public/assets/hero-spiral.png" class="hero__spiral" alt="">
+                    <img src="./public/assets/hero-star-1.png" class="hero__star" alt="">
+                    <img src="./public/assets/hero-bubble.png" class="hero__bubble" alt="">
+                </div>
+            </section>
+            <img src="public/assets/hero-star-2.png" class="hero__star--second" alt="">
+            <section class="section advantages" id="advantages">
+                <div class="container advantages__container">
+                    <h2 class="advantages__title section__title">
+                        Преимущества
+                        BI&nbsp;аналитики
+                    </h2>
+                    <div class="advantages__list">
+                        <div class="advantages__item" data-advantage-index="1" data-type="black">
+                            <div class="advantages__item-title">
+                                <span style="min-height: 0">
+                                    Эффективное<br>
+                                    управление
+                                </span>
+                            </div>
+                            <div class="advantages__info-list">
+                                <div class="advantages__info-list__item" data-advantage="2">
+                                    <div style="min-height: 0;">
+                                        <div class="advantages__info-list__title">
+                                            - Анализ клиентского поведения
+                                        </div>
+                                        <div class="advantages__info-list__text">
+                                            Предпочтения клиентов, персонализация предложений
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="advantages__info-list__item" data-advantage="3">
+                                    <div style="min-height: 0;">
+
+                                        <div class="advantages__info-list__title">
+                                            - Обзор финансовых показателей
+                                        </div>
+                                        <div class="advantages__info-list__text">
+                                            Динамичные дашборды позволяют мониторить выручку, затраты и прибыль в режиме
+                                            реального времени
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="advantages__info-list__item" data-advantage="4">
+                                    <div style="min-height: 0;">
+                                        <div class="advantages__info-list__title">
+                                            - Оптимизация бизнес-процессов
+                                        </div>
+                                        <div class="advantages__info-list__text">
+                                            Оптимизация производственных процессов, улучшая производительность и снижая
+                                            издержки
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="advantages__item" data-advantage-index="2">
+                            <div class="advantages__item-title">
+                                <span style="min-height: 0">
+                                    Глубокий<br>анализ
+                               </span>
+                            </div>
+                            <div class="advantages__info-list">
+                                <div class="advantages__info-list__item" data-advantage="1">
+                                    <div style="min-height: 0;">
+                                        <div class="advantages__info-list__title">
+                                            - Отслеживание работы сотрудников
+                                        </div>
+                                        <div class="advantages__info-list__text">
+                                            Количество заключенных сделок, количество провальных, сроки выполнения
+                                            задач, активность внутри компании и многое другое
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="advantages__info-list__item" data-advantage="3">
+                                    <div style="min-height: 0;">
+
+                                        <div class="advantages__info-list__title">
+                                            - Анализ эффективности проектов
+                                        </div>
+                                        <div class="advantages__info-list__text">
+                                            Оценка бюджетной эффективности, выявление задержки и оптимизирование график
+                                            работ
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="advantages__info-list__item" data-advantage="4">
+                                    <div style="min-height: 0;">
+                                        <div class="advantages__info-list__title">
+                                            - Адаптация маркетинговых стратегий
+                                        </div>
+                                        <div class="advantages__info-list__text">
+                                            Помогает адаптировать маркетинговые стратегии под индивидуальные
+                                            предпочтения клиентов
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="advantages__item" data-advantage-index="3">
+                            <div class="advantages__item-title">
+                                <span style="min-height:  0">
+                                    Прозрачность<br>
+                                решений
+                                </span>
+                            </div>
+                            <div class="advantages__info-list">
+                                <div class="advantages__info-list__item" data-advantage="1">
+                                    <div style="min-height: 0;">
+                                        <div class="advantages__info-list__title">
+                                            - Мониторинг оборота продаж
+                                        </div>
+                                        <div class="advantages__info-list__text">
+                                            Динамика продаж, выявление наиболее прибыльных товаров или услуг
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="advantages__info-list__item" data-advantage="2">
+                                    <div style="min-height: 0;">
+
+                                        <div class="advantages__info-list__title">
+                                            - Анализ динамики продаж
+                                        </div>
+                                        <div class="advantages__info-list__text">
+                                            Позволяет выявлять тенденции в потребительском спросе, анализировать
+                                            сезонные колебания
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="advantages__info-list__item" data-advantage="4">
+                                    <div style="min-height: 0;">
+                                        <div class="advantages__info-list__title">
+                                            - Стратегические решения
+                                        </div>
+                                        <div class="advantages__info-list__text">
+                                            Позволяем оценивать результаты внедрения инноваций, анализировать их влияние
+                                            на ключевые показатели производительности
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="advantages__item" data-advantage-index="4" data-type="black">
+                            <div class="advantages__item-title">
+                                <span style="min-height: 0">
+                                    Гибкость<br>
+                                    бизнеса
+                                </span>
+                            </div>
+                            <div class="advantages__info-list">
+                                <div class="advantages__info-list__item" data-advantage="1">
+                                    <div style="min-height: 0;">
+                                        <div class="advantages__info-list__title">
+                                            - Анализ эффективности маркетинга
+                                        </div>
+                                        <div class="advantages__info-list__text">
+                                            Определение эффективности каналов привлечения
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="advantages__info-list__item" data-advantage="2">
+                                    <div style="min-height: 0;">
+
+                                        <div class="advantages__info-list__title">
+                                            - Оптимизация ценовой политики
+                                        </div>
+                                        <div class="advantages__info-list__text">
+                                            Анализ данных о взаимосвязи между ценами и объемами продаж помогает
+                                            определить оптимальные ценовые диапазоны для максимизации выручки
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="advantages__info-list__item" data-advantage="3">
+                                    <div style="min-height: 0;">
+                                        <div class="advantages__info-list__title">
+                                            - Анализ операционных рисков
+                                        </div>
+                                        <div class="advantages__info-list__text">
+                                            Идентификация потенциальных угроз (неэффективные бизнес-процессы и прочее)
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="advantages__accordion">
+                        <div class="advantages__accordion-item accordion-item active">
+                            <div class="advantages__accordion-title">
+                                Эффективное<br>
+                                управление
+                            </div>
+                            <div class="advantages__accordion-content">
+                                <div style="min-height: 0">
+                                    <div class="advantages__accordion-subtitle">- Отслеживание работы сотрудников</div>
+                                    <p class="advantages__accordion-text">
+                                        Количество заключенных сделок, количество провальных, сроки выполнения задач,
+                                        активность внутри компании и многое другое
+                                    </p>
+                                    <div class="advantages__accordion-subtitle">
+                                        - Мониторинг оборота продаж
+                                    </div>
+                                    <p class="advantages__accordion-text">
+                                        Динамика продаж, выявление наиболее прибыльных товаров или услуг
+                                    </p>
+                                    <div class="advantages__accordion-subtitle">
+                                        - Анализ эффективности маркетинга
+                                    </div>
+                                    <p class="advantages__accordion-text">
+                                        Определение эффективности каналов привлечения
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="advantages__accordion-item accordion-item">
+                            <div class="advantages__accordion-title">
+                                Глубокий<br>
+                                анализ
+                            </div>
+                            <div class="advantages__accordion-content">
+                                <div style="min-height: 0">
+                                    <div class="advantages__accordion-subtitle">
+                                        - Анализ клиентского поведения
+                                    </div>
+                                    <p class="advantages__accordion-text">
+                                        Предпочтения клиентов, персонализация предложений
+                                    </p>
+                                    <div class="advantages__accordion-subtitle">
+                                        - Анализ динамики продаж
+                                    </div>
+                                    <p class="advantages__accordion-text">
+                                        Позволяет выявлять тенденции в потребительском спросе, анализировать сезонные
+                                        колебания
+                                    </p>
+                                    <div class="advantages__accordion-subtitle">
+                                        - Оптимизация ценовой политики
+                                    </div>
+                                    <p class="advantages__accordion-text">
+                                        Анализ данных о взаимосвязи между ценами и объемами продаж помогает определить
+                                        оптимальные ценовые диапазоны для максимизации выручки
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="advantages__accordion-item accordion-item">
+                            <div class="advantages__accordion-title">
+                                Прозрачность<br>
+                                решений
+                            </div>
+                            <div class="advantages__accordion-content">
+                                <div style="min-height: 0">
+                                    <div class="advantages__accordion-subtitle">
+                                        - Обзор финансовых показателей
+                                    </div>
+                                    <p class="advantages__accordion-text">
+                                        Динамичные дашборды позволяют мониторить выручку, затраты и прибыль в режиме
+                                        реального времени
+                                    </p>
+                                    <div class="advantages__accordion-subtitle">
+                                        - Анализ эффективности проектов
+                                    </div>
+                                    <p class="advantages__accordion-text">
+                                        Оценка бюджетной эффективности, выявление задержки и оптимизирование график
+                                        работ
+                                    </p>
+                                    <div class="advantages__accordion-subtitle">
+                                        - Анализ операционных рисков
+                                    </div>
+                                    <p class="advantages__accordion-text">
+                                        Идентификация потенциальных угроз (неэффективные бизнес-процессы и прочее)
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="advantages__accordion-item accordion-item">
+                            <div class="advantages__accordion-title">
+                                Гибкость<br>
+                                бизнеса
+                            </div>
+                            <div class="advantages__accordion-content">
+                                <div style="min-height: 0">
+                                    <div class="advantages__accordion-subtitle">
+                                        - Оптимизация бизнес-процессов
+                                    </div>
+                                    <p class="advantages__accordion-text">
+                                        Оптимизация производственных процессов, улучшая производительность и снижая
+                                        издержки
+                                    </p>
+                                    <div class="advantages__accordion-subtitle">
+                                        - Адаптация маркетинговых стратегий
+                                    </div>
+                                    <p class="advantages__accordion-text">
+                                        Помогает адаптировать маркетинговые стратегии под индивидуальные предпочтения
+                                        клиентов
+                                    </p>
+                                    <div class="advantages__accordion-subtitle">
+                                        - Стратегические решения
+                                    </div>
+                                    <p class="advantages__accordion-text">
+                                        Позволяем оценивать результаты внедрения инноваций, анализировать их влияние на
+                                        ключевые показатели производительности
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <img src="./public/assets/noise-advantages.png" class="advantages__noise" alt="">
+                <img src="./public/assets/advantages-back.png" class="advantages__back" alt="">
+            </section>
+            <section class="section how-works">
+                <div class="container how-works__container">
+                    <h2 class="section__title how-works__title">Как это работает?</h2>
+                    <div class="how-works__accordion">
+
+                        <div class="how-works__accordion-item accordion-item active">
+                            <div class="how-works__accordion-title">
+                                1. Сбор и структурирование данных
+                            </div>
+                            <div class="how-works__accordion-content">
+                                <div style="min-height: 0">
+                                    Процесс систематизации данных начинается с тщательного сбора
+                                    разнообразной информации из множества источников
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="how-works__accordion-item accordion-item">
+                            <div class="how-works__accordion-title">
+                                2. Оптимизация данных
+                            </div>
+                            <div class="how-works__accordion-content">
+                                <div style="min-height: 0">
+                                    Собранные данные подвергаются процессу систематизации, включающему в себя
+                                    преобразование и связывание информации
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="how-works__accordion-item accordion-item">
+                            <div class="how-works__accordion-title">
+                                3. Создание динамичных дашбордов
+                            </div>
+                            <div class="how-works__accordion-content">
+                                <div style="min-height: 0">
+                                    Оптимизированные данные превращаются в динамичные дашборды, предоставляющие
+                                    визуализированный обзор аналитики в удобном формате
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            <section class="section offers" id="offers">
+                <div class="container offers__container">
+                    <h2 class="section__title offers__title">Наше предложение</h2>
+                    <h4 class="offers__subtitle">
+                        *Действуют сниженные цены*
+                    </h4>
+                    <div class="offers__nav tabs__nav">
+                        <a href="#unique" class="btn tabs__nav-link">
+                            Уникально под вас
+                        </a>
+                        <a href="#dashboards" class="btn tabs__nav-link" data-btn-type="dark">
+                            Типовые дашборды
+                        </a>
+                    </div>
+                    <div class="offers__tabs tabs">
+                        <div class="tab" id="unique">
+                            <div class="tab__content">
+                                <div class="develop">
+                                    В разработке
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab active" id="dashboards">
+                            <div class="tab__content">
+                                <div class="offers__list">
+                                    <div class="offer">
+                                        <div class="offer__title">до 5</div>
+                                        <div class="offer__content">
+                                            <div class="offer__info">
+                                                <div class="offer__info-inner" style="min-height: 180px">
+                                                    <ul>
+                                                        <li>Тарифы будут</li>
+                                                        <li>содержать</li>
+                                                        <li>Название, цену,</li>
+                                                        <li>Описание, срок,</li>
+                                                        <li>внедрения</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+<!--                                            <a href="#" class="offer__collapse">-->
+<!--                                                <span class="open active">Развернуть</span>-->
+<!--                                                <span class="close">Свернуть</span>-->
+<!--                                                <svg width="23" height="23" viewBox="0 0 23 23" fill="none"-->
+<!--                                                     xmlns="http://www.w3.org/2000/svg">-->
+<!--                                                    <rect y="11.3137" width="3" height="16"-->
+<!--                                                          transform="rotate(-45 0 11.3137)"-->
+<!--                                                          fill="black"/>-->
+<!--                                                    <rect x="20.5061" y="9.19238" width="3" height="16"-->
+<!--                                                          transform="rotate(45 20.5061 9.19238)" fill="black"/>-->
+<!--                                                </svg>-->
+<!--                                            </a>-->
+                                        </div>
+                                        <div class="offer__price">
+                                            80 000
+                                        </div>
+                                    </div>
+                                    <div class="offer">
+                                        <div class="offer__title">до 15</div>
+                                        <div class="offer__content">
+                                            <div class="offer__info">
+                                                <div class="offer__info-inner" style="min-height: 180px">
+                                                    <ul>
+                                                        <li>Тарифы будут</li>
+                                                        <li>содержать</li>
+                                                        <li>Название, цену,</li>
+                                                        <li>Описание, срок,</li>
+                                                        <li>внедрения</li>
+                                                        <li>Тарифы будут</li>
+                                                        <li>содержать</li>
+                                                        <li>Название, цену,</li>
+                                                        <li>Описание, срок,</li>
+                                                        <li>внедрения</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <a href="#" class="offer__collapse">
+                                                <span class="open active">Развернуть</span>
+                                                <span class="close">Свернуть</span>
+                                                <svg width="23" height="23" viewBox="0 0 23 23" fill="none"
+                                                     xmlns="http://www.w3.org/2000/svg">
+                                                    <rect y="11.3137" width="3" height="16"
+                                                          transform="rotate(-45 0 11.3137)"
+                                                          fill="black"/>
+                                                    <rect x="20.5061" y="9.19238" width="3" height="16"
+                                                          transform="rotate(45 20.5061 9.19238)" fill="black"/>
+                                                </svg>
+                                            </a>
+                                        </div>
+                                        <div class="offer__price">
+                                            <div class="offer__discount">
+                                                <div class="offer__discount-price">
+                                                    <span>240 000</span>
+                                                </div>
+                                                <div class="offer__discount-percent">-10%</div>
+                                            </div>
+                                            216 000
+                                        </div>
+                                    </div>
+                                    <div class="offer">
+                                        <div class="offer__title">до 25</div>
+                                        <div class="offer__content">
+                                            <div class="offer__info">
+                                                <div class="offer__info-inner" style="min-height: 180px">
+                                                    <ul>
+                                                        <li>Тарифы будут</li>
+                                                        <li>содержать</li>
+                                                        <li>Название, цену,</li>
+                                                        <li>Описание, срок,</li>
+                                                        <li>внедрения</li>
+                                                        <li>Тарифы будут</li>
+                                                        <li>содержать</li>
+                                                        <li>Название, цену,</li>
+                                                        <li>Описание, срок,</li>
+                                                        <li>внедрения</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <a href="#" class="offer__collapse">
+                                                <span class="open active">Развернуть</span>
+                                                <span class="close">Свернуть</span>
+                                                <svg width="23" height="23" viewBox="0 0 23 23" fill="none"
+                                                     xmlns="http://www.w3.org/2000/svg">
+                                                    <rect y="11.3137" width="3" height="16"
+                                                          transform="rotate(-45 0 11.3137)"
+                                                          fill="black"/>
+                                                    <rect x="20.5061" y="9.19238" width="3" height="16"
+                                                          transform="rotate(45 20.5061 9.19238)" fill="black"/>
+                                                </svg>
+                                            </a>
+                                        </div>
+                                        <div class="offer__price">
+                                            <div class="offer__discount">
+                                                <div class="offer__discount-price"><span>400 000</span></div>
+                                                <div class="offer__discount-percent">-15%</div>
+                                            </div>
+                                            340 000
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="offers__footer">
+                                    <a href="#" class="btn" data-btn-type="dark">
+                                        Получить программу
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <img src="./public/assets/noise-advantages.png" class="offers__noise" alt="">
+                <img src="./public/assets/offer-back.png" class="offers__back" alt="">
+            </section>
+            <section class="section feedback" id="feedback">
+                <div class="container">
+                    <form action="" style="height: 600px"></form>
+                </div>
+                <img src="./public/assets/noise-advantages.png" class="feedback__noise" alt="">
+                <img src="./public/assets/form-back.png" class="feedback__back" alt="">
+            </section>
+            <section class="section testimonials" id="testimonials">
+                <div class="container testimonials__container">
+                    <h2 class="testimonials__title section__title">
+                        Кейсы и отзывы
+                        клиентов
+                    </h2>
+                    <div class="testimonials__wrapper">
+                        <div class="testimonials__slider">
+                            <div class="testimonial">
+                                <div class="testimonial__inner">
+                                    <div class="testimonial__author">Алматы кондитерский дом</div>
+                                    <p class="testimonial__content">
+                                        Хочу выразить благодарность компании BI аналитика за такую
+                                        отличную работу. Это не первые интеграторы с которыми мы работаем, но я впервые
+                                        вижу,
+                                        компанию имеющую свой взгляд на бизнес, свои приемы по оптимизации, которые
+                                        максимально
+                                        приближены к потребностям клиента.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="testimonial">
+                                <div class="testimonial__inner">
+                                    <div class="testimonial__author">Алматы кондитерский дом</div>
+                                    <p class="testimonial__content">
+                                        Хочу выразить благодарность компании BI аналитика за такую
+                                        отличную работу. Это не первые интеграторы с которыми мы работаем, но я впервые
+                                        вижу,
+                                        компанию имеющую свой взгляд на бизнес, свои приемы по оптимизации, которые
+                                        максимально
+                                        приближены к потребностям клиента.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonials__nav testimonials__prev">
+                            <svg width="60" height="60" viewBox="0 0 60 60" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="30" cy="30" r="30" fill="white"/>
+                                <rect width="3" height="16" rx="1.5"
+                                      transform="matrix(-0.707107 -0.707107 -0.707107 0.707107 33.8076 21.1211)"
+                                      fill="black"/>
+                                <rect width="3" height="16" rx="1.5"
+                                      transform="matrix(-0.707107 0.707107 0.707107 0.707107 22.4941 28.1924)"
+                                      fill="black"/>
+                            </svg>
+                        </div>
+                        <div class="testimonials__nav testimonials__next">
+                            <svg width="60" height="60" viewBox="0 0 60 60" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="30" cy="30" r="30" fill="white"/>
+                                <rect x="26.1924" y="21.1211" width="3" height="16" rx="1.5"
+                                      transform="rotate(-45 26.1924 21.1211)" fill="black"/>
+                                <rect x="37.5061" y="28.1921" width="3" height="16" rx="1.5"
+                                      transform="rotate(45 37.5061 28.1921)" fill="black"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <img src="./public/assets/noise2.png" class="testimonials__noise" alt="">
+                <img src="./public/assets/testimonials-back.png" class="testimonials__back" alt="">
+            </section>
+        </main>
+        <footer class="footer" id="footer">
+            <div class="container">
+                <div class="footer__content">
+                    <div class="footer__col footer__col--logo">
+                        <img id="footer__logo" src="./assets/logo-footer.svg" alt="BIT kovin">
+                    </div>
+                    <div class="footer__col">
+                        <div class="footer__title">Навигация</div>
+                        <div class="footer__list">
+                            <div class="footer__list-item">
+                                <a href="#hero">Главная</a>
+                            </div>
+                            <div class="footer__list-item">
+                                <a href="#testimonials">Кейсы</a>
+                            </div>
+                            <div class="footer__list-item">
+                                <a href="#advantages">Преимущества</a>
+                            </div>
+                            <div class="footer__list-item">
+                                <a href="#offers">Услуги</a>
+                            </div>
+                            <div class="footer__list-item">
+                                <a href="#footer">Контакты</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer__col">
+                        <div class="footer__title">Мы в сети</div>
+                        <div class="footer__list">
+                            <div class="footer__list-item">
+                                <a href="#">Instagram</a>
+                            </div>
+                            <div class="footer__list-item">
+                                <a href="#">Telegram</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer__col footer__col--contacts">
+                        <div class="footer__title">Наши контакты</div>
+                        <div class="footer__list">
+                            <div class="footer__list-item"><a href="tel:+77020065722">+7 702 006 5722</a> - Отдел продаж
+                            </div>
+                            <div class="footer__list-item"><a href="tel:+77056696230">+7 705 669 6230</a> - Руководитель
+                            </div>
+                            <div class="footer__list-item">Юр. адрес - г. Костанай, Воинов-Итернационалистов 1/1</div>
+                            <div class="footer__list-item"><a href="mailto:info@bitkovin.kz">info@bitkovin.kz</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer__copyright">
+                    Разработка bitkovin/pinkpillies<br>
+                    © Все права защищены. bitKovin.
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>
+<div id="modal-content" class="modal" style="display:none;max-width:700px;">
+    <div class="section__title modal__title">
+        Получить консультацию
+    </div>
+    <form action="">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+    </form>
+</div>
+<script type="module" defer src="src/js/animations.js"></script>
+<script type="module" defer src="src/js/slider.js"></script>
+<script type="module" defer src="src/js/app.js"></script>
+</body>
+</html>

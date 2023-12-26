@@ -1,0 +1,24 @@
+@use "../../abstracts/index" as *;
+
+.header {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  right: 0;
+
+  z-index: 100;
+
+  &__inner {
+    border-radius: 20px;
+
+    background-color: transparent;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (max-width: $breakpoint-sm) {
+      padding-bottom: 20px;
+    }
+  }
+}

@@ -1,0 +1,114 @@
+@use "../../abstracts" as *;
+
+.btn {
+  display: inline-block;
+
+  --font-size: #{$font-size-600};
+  --line-height: 1.2;
+  --color: #000;
+
+  --padding: 1.5em;
+  --background: #fff;
+
+  --border-width: 3px;
+  --border-color: #fff;
+  --border-radius: 0.75em;
+
+  --transition: 200ms;
+
+  padding: var(--padding);
+
+  background: var(--background);
+
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  font-weight: $font-weight-semi-bold;
+  color: var(--color);
+
+  border: var(--border-width) solid var(--border-color);
+  border-radius: var(--border-radius);
+
+  transition: color var(--transition) ease-in,
+  background var(--transition) ease-in,
+  border var(--transition) ease-in;
+
+  @media (max-width: $breakpoint-md) {
+    --padding: 1rem;
+    --font-size: #{$font-size-400};
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    --padding: 0.8rem;
+    --font-size: #{$font-size-300};
+  }
+
+  &:hover {
+    --background: #000;
+    --color: #fff;
+    --border-color: #090909;
+    --border-width: 3px;
+  }
+
+  &[data-btn="border"] {
+    --border-color: #fff;
+    --border-width: 3px;
+    --background: transparent;
+    --color: #fff;
+  }
+
+  &[data-btn="border"]:hover {
+    --border-color: #fff;
+    --border-width: 3px;
+    --background: #fff;
+    --color: #000;
+  }
+
+  &[data-btn="fill"] {
+    --background: #{$button-accent-color};
+    --color: #{$button-accent-color};
+  }
+
+  &[data-btn-text="center"] {
+    display: block;
+    margin: 0 auto;
+  }
+
+  &[data-btn-align="center"] {
+    display: block;
+    margin: 0 auto;
+  }
+
+  &[data-btn-type="success"] {
+    --border-color: #77C67E;
+    --background: #77C67E;
+  }
+
+  &[data-btn-type="primary"] {
+    --border-color: #6F96FA;
+    --background: #6F96FA;
+  }
+
+  &[data-btn-type="dark"] {
+    --border-color: #000;
+    --background: #000000;
+    --color: #fff;
+
+    &:hover {
+      --border-color: #fff;
+      --background: #fff;
+      --color: #000
+    }
+  }
+
+  &[data-btn-size="full"] {
+    width: 100%;
+  }
+
+  &:disabled {
+    pointer-events: none;
+  }
+
+  &[data-btn-text="center"] {
+    text-align: center;
+  }
+}

@@ -1,0 +1,50 @@
+@use "../abstracts" as *;
+
+.site-container {
+  max-width: 100%;
+  width: 100%;
+}
+
+.container {
+  --max-width: #{$container-max-width};
+  --padding: #{$container-padding-width};
+
+  overflow: hidden;
+
+  width: min(var(--max-width), 100% - calc(var(--padding) * 2));
+  padding-inline: var(--padding);
+  margin-inline: auto;
+
+  @media (min-width: $breakpoint-sm) {
+    --max-width: 540px;
+  }
+
+  @media (min-width: $breakpoint-md) {
+    --max-width: 720px;
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    --max-width: 960px;
+  }
+
+  @media (min-width: $breakpoint-xl) {
+    --max-width: 1140px;
+  }
+
+  @media (min-width: $breakpoint-xxl) {
+    --max-width: 1360px;
+  }
+
+}
+
+.container[data-container="narrow"] {
+  --max-width: #{$container-max-width-narrow};
+}
+
+.container[data-container="wide"] {
+  --max-width: #{$container-max-width-wide};
+}
+
+.container[data-container="full"] {
+  --max-width: #{$container-max-width-full};
+}

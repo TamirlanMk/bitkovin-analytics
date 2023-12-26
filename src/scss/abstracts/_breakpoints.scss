@@ -1,0 +1,28 @@
+// By em (1em = 16px)
+$breakpoint-sm: 36.01em;
+$breakpoint-md: 48.01em;
+$breakpoint-lg: 65.01em;
+$breakpoint-xl: 75.01em;
+$breakpoint-xxl: 87.51em;
+
+//@media (max-width: $breakpoint-sm) {
+//}
+//
+//@media (max-width: $breakpoint-md) {
+//}
+//
+//@media (max-width: $breakpoint-lg) {
+//}
+//
+//@media (max-width: $breakpoint-xl) {
+//}
+//
+//@media (max-width: $breakpoint-xxl) {
+//}
+
+
+$breakpoints: (
+        small: 30em,
+        medium: 45em,
+        large: 65em,
+);

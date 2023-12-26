@@ -1,0 +1,101 @@
+@use "../abstracts" as *;
+
+// Section
+
+.section {
+  --padding-block: #{$section-padding-top} #{$section-padding-bottom};
+  --margin-block: #{$section-margin-top} #{$section-margin-bottom};
+
+  padding-block: var(--padding-block);
+  margin-block: var(--margin-block);
+
+  &:first-of-type {
+    margin-block-start: 0;
+  }
+
+  @media (max-width: $breakpoint-xl) {
+    --padding-block: calc(#{$section-padding-top} / 2) #{$section-padding-bottom};
+  }
+
+  @media (max-width: $breakpoint-md) {
+    --padding-block: calc(#{$section-padding-top} / 2.4) #{$section-padding-bottom};
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    --padding-block: calc(#{$section-padding-top} / 4) #{$section-padding-bottom};
+  }
+}
+
+.section[data-section="with-pd"] {
+  padding-block: var(--padding-block);
+}
+
+// Section row
+
+.section-row {
+  --align: center;
+  --gap: 0;
+
+  gap: var(--gap);
+
+  display: flex;
+  flex-direction: row;
+  align-items: var(--align);
+  justify-content: space-between;
+}
+
+.section-row[data-align="start"] {
+  --align: flex-start;
+}
+
+.section-row[data-align="end"] {
+  --align: flex-end;
+}
+
+.section-row[data-align="stretch"] {
+  --align: stretch;
+}
+
+// Section Col
+//
+//.section-col {
+//  flex-basis: var(--width, auto);
+//  flex-grow: 1;
+//  flex-shrink: 1;
+//}
+
+// Section Title
+
+.section__title {
+  --text-align: left;
+  --margin-bottom: 60px;
+
+  color: #000000;
+  text-align: var(--text-align);
+  font-family: $heading-font-family;
+  font-size: 8.75rem;
+  font-style: normal;
+  letter-spacing: 7px;
+  font-weight: 800;
+  line-height: 1;
+
+  margin-bottom: var(--margin-bottom);
+
+  @media (max-width: $breakpoint-xl) {
+    font-size: 5.5rem;
+  }
+
+  @media (max-width: $breakpoint-lg) {
+    font-size: 4.5rem;
+  }
+
+  @media (max-width: $breakpoint-md) {
+    --text-align: center;
+    font-size: 3.5rem;
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    --text-align: center;
+    font-size: 2.3rem;
+  }
+}

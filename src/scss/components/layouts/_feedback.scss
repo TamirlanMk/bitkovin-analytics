@@ -1,0 +1,34 @@
+.feedback {
+  position: relative;
+  overflow: hidden;
+
+  &__container {
+    overflow: visible;
+    overflow-inline: hidden;
+    overflow-block: hidden;
+    position: relative;
+    z-index: 3;
+  }
+
+  &__noise {
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    z-index: 2;
+    opacity: 0.10;
+    width: 100%;
+    height: 100%;
+    max-width: initial;
+  }
+
+  &__back {
+    pointer-events: none;
+
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

@@ -1,0 +1,317 @@
+@use "../../abstracts" as *;
+
+.advantages {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+
+  padding-bottom: calc(260px + 15.36rem) !important;
+
+  @media (max-width: $breakpoint-xl) {
+    padding-bottom: calc(220px + 15.36rem) !important;
+  }
+
+  @media (max-width: $breakpoint-md) {
+    padding-bottom: calc(8rem) !important;
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    padding-bottom: calc(6rem) !important;
+  }
+
+  &__container {
+    overflow: visible;
+    overflow-inline: hidden;
+    overflow-block: hidden;
+    position: relative;
+    z-index: 3;
+  }
+
+  &__noise {
+    pointer-events: none;
+    position: absolute;
+    z-index: 2;
+    opacity: 0.10;
+    width: 100%;
+    height: 100%;
+    max-width: initial;
+  }
+
+  &__back {
+    pointer-events: none;
+
+    z-index: 1;
+    position: absolute;
+    top: 36rem;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    @media (max-width: $breakpoint-xl) {
+      top: 30rem;
+      transform: translate(-50%, -50%) scale(0.8);
+      transform-origin: center center;
+    }
+
+    @media (max-width: $breakpoint-md) {
+      left: 100%;
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+
+  &__title {
+    --text-align: right;
+    font-size: 7.5rem;
+
+    margin-bottom: 106px;
+
+    @media (max-width: $breakpoint-xl) {
+      font-size: 5.5rem;
+    }
+
+    @media (max-width: $breakpoint-lg) {
+      font-size: 5rem;
+    }
+
+    @media (max-width: $breakpoint-md) {
+      --text-align: center;
+      font-weight: 800;
+      font-size: 3rem;
+      margin-bottom: 50px;
+    }
+
+    @media (max-width: $breakpoint-sm) {
+      --text-align: center;
+      font-weight: 800;
+      font-size: 1.875rem;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+  }
+
+  .advantages__list {
+    position: absolute;
+    z-index: 100;
+    inset-inline: 0;
+    top: 350px;
+    display: flex;
+    align-items: start;
+    gap: 20px;
+
+    @media (max-width: $breakpoint-xl) {
+      top: 250px;
+      align-items: stretch;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: $breakpoint-md) {
+      display: none;
+    }
+
+    .advantages__item {
+      --text-color: #000;
+      flex-basis: 33.3333333%;
+      padding: 38px 30px;
+      background: #fff;
+      border-radius: 30px;
+      cursor: pointer;
+
+      min-height: 132px;
+
+      @media (max-width: $breakpoint-xl) {
+        padding: 28px 20px;
+        min-height: auto;
+        flex-basis: 48%;
+        margin: 0 auto;
+      }
+
+      &.close-title {
+        .advantages__item-title {
+          grid-template-rows: 0fr;
+        }
+      }
+
+      &-title {
+        display: grid;
+        grid-template-rows: 1fr;
+        overflow: hidden;
+
+        color: var(--text-color);
+        font-size: 1.625rem;
+        font-family: $font-family-accent;
+        font-weight: $font-weight-semi-bold;
+        text-align: center;
+
+        transition: grid-template-rows .2s ease-in;
+
+        @media (max-width: $breakpoint-xl) {
+          font-size: 1.25rem;
+        }
+
+        span {
+          display: block;
+        }
+      }
+    }
+
+    .advantages__item[data-type='black'] {
+      --text-color: #fff;
+      background-color: #000;
+    }
+
+    .advantages__info-list {
+      color: var(--text-color);
+
+      &__item {
+        display: grid;
+        grid-template-rows: 0fr;
+        overflow: hidden;
+
+        transition: grid-template-rows .2s ease-in;
+
+        &.active {
+          grid-template-rows: 1fr;
+        }
+      }
+
+      &__text {
+        margin-top: 1.5rem;
+        color: inherit;
+        text-align: center;
+        font-family: $font-family-base;
+        font-size: 1rem;
+        font-weight: 500;
+        line-height: 1.8em;
+        letter-spacing: 0.8px;
+
+        @media (max-width: $breakpoint-xl) {
+          font-size: 0.825rem;
+        }
+      }
+
+      &__title {
+        color: var(--text-color);
+        font-size: $font-size-600;
+        font-family: $font-family-base;
+        font-weight: $font-weight-semi-bold;
+        text-align: center;
+      }
+    }
+  }
+
+  &__accordion {
+    display: none;
+    gap: 2.5rem;
+
+    @media (max-width: $breakpoint-md) {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    &-item {
+      background-color: #fff;
+      border-radius: 30px;
+
+      &:nth-child(3n + 1) {
+        background-color: #000;
+        color: #ffffff;
+
+        .advantages__accordion-title::after,
+        .advantages__accordion-title::before {
+          background-color: #ffffff;
+        }
+      }
+
+      &.active {
+        .advantages__accordion-content {
+          grid-template-rows: 1fr;
+          padding-bottom: 2.5rem;
+        }
+
+        .advantages__accordion-title {
+          &::before {
+            opacity: 0
+          }
+        }
+      }
+    }
+
+    &-subtitle {
+      color:inherit;
+      font-size: 1.25rem;
+      font-weight: 600;
+      line-height: 1.8em;
+      letter-spacing: 1px;
+      margin-bottom: 1em;
+    }
+
+    &-text {
+      color:inherit;
+      font-size: 1rem;
+      font-weight: 500;
+      line-height: 1.8em;
+      letter-spacing: 1px;
+      margin-bottom: 2.5em;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &-title {
+      cursor: pointer;
+      position: relative;
+
+      color: inherit;
+
+      font-family: $font-family-accent;
+      font-size: 1.8rem;
+      font-weight: $font-weight-bold;
+      letter-spacing: 2px;
+
+      padding: 2rem 2rem;
+
+      @media (max-width: $breakpoint-sm) {
+        font-size: 1.625rem;
+      }
+
+      &::before {
+        transform: rotate(-90deg);
+      }
+
+      &::after,
+      &::before, {
+        scale: 1;
+        content: '';
+        display: block;
+        position: absolute;
+        right: 2rem;
+
+        width: 30px;
+        height: 3px;
+        background-color: #000000;
+        top: 53%;
+
+        transition: all .1s ease-in;
+      }
+    }
+
+    &-content {
+      display: grid;
+      grid-template-rows: 0fr;
+      overflow: hidden;
+
+      color: inherit;
+
+      font-family: $font-family-base;
+      font-size: 1.25rem;
+      font-weight: 600;
+      line-height: 1.6em;
+      letter-spacing: 1.3px;
+
+      padding: 0 1.785rem;
+
+      transition: grid-template-rows .2s ease-in;
+    }
+  }
+}

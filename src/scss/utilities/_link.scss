@@ -1,0 +1,10 @@
+@use "../abstracts" as *;
+
+a {
+  text-decoration: none;
+  color: $link-color;
+}
+
+a:not([class])hover {
+  color: $link-color-hover;
+}
