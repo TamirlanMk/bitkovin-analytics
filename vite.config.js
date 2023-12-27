@@ -18,7 +18,7 @@ export default defineConfig({
     },
     plugins: [
         copy([
-            {src: 'src/libs', dest: 'dist/libs'}, // копируем из src/libs в libs
+            {src: 'src/libs', dest: 'dist'}, // копируем из src/libs в libs
         ]),
     ],
 })
