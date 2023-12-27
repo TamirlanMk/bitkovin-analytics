@@ -1,0 +1,73 @@
+@use "../../abstracts" as *;
+
+.lead-magnet {
+  position: relative;
+
+  &__link {
+    border-radius: 50%;
+    position: absolute;
+    inset: 0;
+    z-index: 101;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    z-index: 100;
+    transform: translateY(-50%);
+    background-color: #ffffff;
+    aspect-ratio: 1/1;
+    width: 200px;
+    right: 50px;
+    padding: 2.5rem;
+    border-radius: 50%;
+    
+    @media (max-width: $breakpoint-md) {
+      width: 150px;
+    }
+
+    @media (max-width: $breakpoint-sm) {
+      width: 120px;
+      right: 30px;
+    }
+  }
+
+  &__image {
+    opacity: 1;
+
+    position: absolute;
+    top: 50%;
+    left: 46%;
+    transform: translate(-50%, -50%);
+
+    max-width: 80%;
+
+    aspect-ratio: 1/1;
+    object-fit: contain;
+
+    @media (max-width: $breakpoint-sm) {
+      max-width: 70%;
+    }
+  }
+
+  &__text {
+    opacity: 0;
+
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+
+    @media (max-width: $breakpoint-md) {
+      font-size: 1rem;
+    }
+
+    @media (max-width: $breakpoint-sm) {
+      font-size: 0.625rem;
+    }
+  }
+}

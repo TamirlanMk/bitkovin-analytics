@@ -1,14 +1,13 @@
 gsap.registerPlugin(ScrollSmoother, ScrollTrigger);
 
-ScrollSmoother.create({
-    smooth: 1, // how long (in seconds) it takes to "catch up" to the native scroll position
-    effects: true, // looks for data-speed and data-lag attributes on elements
-    smoothTouch: 0.1, // much shorter smoothing time on touch devices (default is NO smoothing on touch devices)
-});
 
 let laptopScreen = window.matchMedia('(min-width:992px)')
 
 if (laptopScreen.matches) {
+    ScrollSmoother.create({
+        smooth: 1, // how long (in seconds) it takes to "catch up" to the native scroll position
+        effects: true, // looks for data-speed and data-lag attributes on elements
+    });
 
     gsap.to('.hero__spiral', {
         scale: 1,
@@ -53,7 +52,6 @@ if (laptopScreen.matches) {
         scrollTrigger: {
             trigger: '.advantages',
             start: 'top 40%',
-            // markers: true
         }
     });
 
@@ -72,5 +70,86 @@ if (laptopScreen.matches) {
             ease: "power2.out",
             autoAlpha: 0
         }, '-=1.7');
+
+    const offersTimeline = gsap.timeline({
+        scrollTrigger: {
+            trigger: '.offers',
+            start: 'top 30%',
+        }
+    });
+
+    offersTimeline
+        .from('.offers__back', {
+            scale: 0.8,
+            autoAlpha: 0,
+            rotate: 22,
+            ease: "power2.out",
+            duration: 2
+        })
+
+
+    const testimonialsTimeline = gsap.timeline({
+        scrollTrigger: {
+            trigger: '.testimonials',
+            start: 'top 30%',
+        }
+    });
+
+    testimonialsTimeline
+        .from('.testimonials__back', {
+            scale: 0.8,
+            autoAlpha: 0,
+            rotate: 15,
+            ease: "power2.out",
+            duration: 2
+        })
+
+    const feedbackTimeline = gsap.timeline({
+        scrollTrigger: {
+            trigger: '.feedback',
+            start: 'top 30%',
+        }
+    });
+
+    feedbackTimeline
+        .from('.feedback__back', {
+            scale: 0.8,
+            autoAlpha: 0,
+            ease: "power2.out",
+            duration: 2
+        })
+}
+
+let leadMagnet = document.querySelector('.lead-magnet__inner')
+let leadMagnetAnimation = gsap
+    .from('.lead-magnet__inner', {
+        scrollTrigger: {
+            trigger: '.advantages',
+            start: 'bottom 80%',
+        },
+        scale: 0.8,
+        opacity: 0
+    })
+let leadMagnetHover = gsap
+    .timeline({
+        paused: true,
+    })
+    .to('.lead-magnet__image', {
+        autoAlpha: 0,
+        ease: "power2.out",
+        duration: 0.5
+    })
+    .to('.lead-magnet__text', {
+        autoAlpha: 1,
+        ease: "power2.out",
+        duration: 0.5
+    })
+
+leadMagnet.onmouseenter = () => {
+    leadMagnetHover.play()
+}
+
+leadMagnet.onmouseleave = () => {
+    leadMagnetHover.reverse()
 }
 
