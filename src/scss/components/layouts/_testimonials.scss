@@ -71,6 +71,19 @@
     @media (max-width: $breakpoint-xxl) {
       display: none !important;
     }
+
+    &:hover {
+      .circle {
+        fill: #000000 !important;
+
+        transition: fill .2s ease-in;
+      }
+      .line {
+        fill: #ffffff !important;
+
+        transition: fill .2s ease-in;
+      }
+    }
   }
 
   &__prev {
