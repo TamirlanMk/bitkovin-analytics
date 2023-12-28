@@ -34,6 +34,12 @@
       width: 120px;
       right: 30px;
     }
+
+    &:hover {
+      .lead-magnet__image {
+        animation-play-state: paused;
+      }
+    }
   }
 
   &__image {
@@ -64,8 +70,7 @@
     height: auto;
     width: auto;
     border-radius: 50%;
-    animation-duration: 2.0s;
-    animation-delay: 4s;
+    animation-duration: 4s;
     animation-name: pulse_1;
     animation-iteration-count: infinite;
     z-index: 1;
@@ -98,37 +103,49 @@
 }
 
 @keyframes pulse_1 {
-  from {
+  0% {
     opacity: 1;
     transform: scale(0.9, 0.9);
   }
 
-  to {
+  50% {
     opacity: 0;
-    transform: scale(1.3, 1.3);
+    transform: scale(1.2, 1.2);
+  }
+
+  100% {
+    opacity: 0;
   }
 }
 
 @keyframes pulse_2 {
-  from {
+  0% {
     opacity: 1;
     transform: scale(0.8, 0.8);
   }
 
-  to {
+  50% {
     opacity: 0;
-    transform: scale(1.4, 1.4);
+    transform: scale(1.3, 1.3);
+  }
+
+  100% {
+    opacity: 0;
   }
 }
 
 @keyframes pulse_3 {
-  from {
+  0% {
     opacity: 1;
     transform: scale(0.8, 0.8);
   }
 
-  to {
+  50% {
     opacity: 0;
-    transform: scale(1.6, 1.6);
+    transform: scale(1.4, 1.4);
+  }
+
+  100% {
+    opacity: 0;
   }
 }

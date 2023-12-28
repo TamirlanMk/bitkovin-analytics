@@ -118,18 +118,22 @@ if (laptopScreen.matches) {
             ease: "power2.out",
             duration: 2
         })
+
+    gsap
+        .from('.lead-magnet__inner', {
+            scrollTrigger: {
+                trigger: '.advantages',
+                start: 'bottom 80%',
+                end: '+=400',
+                scrub: true
+            },
+            scale: 0.8,
+            xPercent: 120
+        })
 }
 
 let leadMagnet = document.querySelector('.lead-magnet__inner')
-let leadMagnetAnimation = gsap
-    .from('.lead-magnet__inner', {
-        scrollTrigger: {
-            trigger: '.advantages',
-            start: 'bottom 80%',
-        },
-        scale: 0.8,
-        opacity: 0
-    })
+
 let leadMagnetHover = gsap
     .timeline({
         paused: true,
@@ -137,12 +141,12 @@ let leadMagnetHover = gsap
     .to('.lead-magnet__image', {
         autoAlpha: 0,
         ease: "power2.out",
-        duration: 0.5
+        duration: 0.25
     })
     .to('.lead-magnet__text', {
         autoAlpha: 1,
         ease: "power2.out",
-        duration: 0.5
+        duration: 0.25
     })
 
 leadMagnet.onmouseenter = () => {
