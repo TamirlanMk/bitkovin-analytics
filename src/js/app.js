@@ -36,6 +36,13 @@ const howWorksAccordion = document.querySelectorAll('.accordion-item');
 
 howWorksAccordion.forEach(item => {
     item.onclick = () => {
+        if (item.classList.contains('active') && item.dataset.type !== 'removable') {
+            return
+        } else if (item.classList.contains('active') && item.dataset.type === 'removable') {
+            item.classList.remove('active')
+            return;
+        }
+
         howWorksAccordion.forEach(i => {
             i.classList.remove('active')
         })

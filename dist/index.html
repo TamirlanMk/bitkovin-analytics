@@ -14,8 +14,8 @@
     <script defer src="./libs/gsap/ScrollSmoother.min.js"></script>
     <script defer src="./libs/gsap/ScrollTrigger.min.js"></script>
     <script defer src="./libs/gsap/gsap.min.js"></script>
-  <script type="module" crossorigin src="./assets/index.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index.css">
+    <script type="module" crossorigin src="/assets/index.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index.css">
 </head>
 <body>
 <div class="site-container" id="smooth-wrapper">
@@ -53,7 +53,7 @@
                     <img src="./assets/hero-bubble.png" class="hero__bubble" alt="">
                 </div>
             </section>
-            <img src="assets/hero-star-2.png" class="hero__star--second" alt="">
+            <img src="./assets/hero-star-2.png" class="hero__star--second" alt="">
             <section class="section advantages" id="advantages">
                 <div class="container advantages__container">
                     <h2 class="advantages__title section__title">
@@ -234,7 +234,7 @@
                         </div>
                     </div>
                     <div class="advantages__accordion">
-                        <div class="advantages__accordion-item accordion-item active">
+                        <div data-type="removable" class="advantages__accordion-item accordion-item">
                             <div class="advantages__accordion-title">
                                 Эффективное<br>
                                 управление
@@ -261,7 +261,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="advantages__accordion-item accordion-item">
+                        <div data-type="removable" class="advantages__accordion-item accordion-item">
                             <div class="advantages__accordion-title">
                                 Глубокий<br>
                                 анализ
@@ -291,7 +291,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="advantages__accordion-item accordion-item">
+                        <div data-type="removable" class="advantages__accordion-item accordion-item">
                             <div class="advantages__accordion-title">
                                 Прозрачность<br>
                                 решений
@@ -321,8 +321,7 @@
                                 </div>
                             </div>
                         </div>
-
-                        <div class="advantages__accordion-item accordion-item">
+                        <div data-type="removable" class="advantages__accordion-item accordion-item">
                             <div class="advantages__accordion-title">
                                 Гибкость<br>
                                 бизнеса
@@ -360,7 +359,7 @@
             </section>
             <section class="lead-magnet">
                 <div class="lead-magnet__inner">
-                    <a href="#" data-fancybox data-src="#modal-content"  class="lead-magnet__link"></a>
+                    <a href="#" data-fancybox data-src="#modal-content" class="lead-magnet__link"></a>
                     <div class="lead-magnet__content">
                         <img src="./assets/robot-lead.png" alt="" class="lead-magnet__image">
                         <div class="lead-magnet__text">

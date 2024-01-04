@@ -17,6 +17,10 @@
 
   &__footer {
     margin-top: 2.5rem;
+
+    @media (max-width: $breakpoint-sm) {
+      margin-top: 1.25rem;
+    }
   }
 
   &__title {
@@ -99,6 +103,7 @@
     @media (max-width: $breakpoint-sm) {
       overflow-x: scroll;
       grid-template-columns: repeat(3, 1fr);
+      padding-bottom: 20px;
     }
   }
 }

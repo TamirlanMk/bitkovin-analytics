@@ -10,6 +10,7 @@
 
   @media (max-width: $breakpoint-sm) {
     padding-top: 80px;
+    background: #000 url(#{$path-assets}/backHowItWorks-mobile.png) no-repeat center 70px;
   }
   
   &__container {
